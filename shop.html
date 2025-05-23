@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Shop - Shreyash Patil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/daisyui@latest"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Add Google Analytics (replace UA-XXXXXX-X with your real ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXX-X"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-XXXXXX-X');
+  </script>
+  <style>
+    .magic-bg-electronics { background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); }
+    .magic-bg-vegetables { background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%); }
+    .magic-bg-furniture { background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); }
+    .magic-bg-tshirts { background: linear-gradient(135deg, #f9d423 0%, #ff4e50 100%); }
+    .magic-section { border-radius: 1.5rem; box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15); margin-bottom: 2.5rem; }
+    .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(8px); border-radius: 1.5rem; }
+    .magic-header { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; letter-spacing: 1px; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-300">
+  <!-- Hamburger Menu -->
+  <header class="bg-blue-800 text-white p-4 shadow-md fixed w-full z-40">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">🛍️ Shreyash's Mega Shop</h1>
+      <nav class="hidden md:flex space-x-4">
+        <a href="index.html" class="hover:text-yellow-300">Home</a>
+        <a href="#products" class="hover:text-yellow-300">Products</a>
+        <a href="#cart" class="hover:text-yellow-300">Cart</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-900 text-white px-4 py-2 absolute w-full left-0 top-16 z-50 rounded-b-xl">
+      <a href="index.html" class="block py-2 border-b border-blue-700">Home</a>
+      <a href="#products" class="block py-2 border-b border-blue-700">Products</a>
+      <a href="#cart" class="block py-2">Cart</a>
+    </div>
+  </header>
+  <button id="darkToggle" class="fixed bottom-8 left-8 p-3 bg-gray-700 text-white rounded-full shadow-lg hover:bg-gray-800 transition-all transform hover:scale-110 z-50">
+    <i class="fas fa-moon"></i>
+  </button>
+  <main class="max-w-6xl mx-auto p-4 pt-24">
+    <section class="text-center py-8">
+      <h2 class="text-3xl font-bold mb-2 magic-header">Welcome to My Shop</h2>
+      <p class="text-gray-600 dark:text-gray-300">Browse categories like Electronics, Vegetables, Furniture, and T-shirts</p>
+    </section>
+    <section id="products" class="space-y-12">
+      <div class="magic-section magic-bg-electronics p-6">
+        <h3 class="text-2xl font-semibold mb-4 magic-header">📱 Electronics</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Smartphone.jpg" alt="Modern smartphone with large display" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Smartphone</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹15,000</p>
+            <button onclick="addToCart('Smartphone', 15000)" class="mt-2 bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded" aria-label="Add Smartphone to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Laptop.webp" alt="Sleek laptop with backlit keyboard" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Laptop</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹45,000</p>
+            <button onclick="addToCart('Laptop', 45000)" class="mt-2 bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded" aria-label="Add Laptop to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Wireless Earbuds.jpg" alt="Wireless earbuds" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Wireless Earbuds</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹2,000</p>
+            <button onclick="addToCart('Wireless Earbuds', 2000)" class="mt-2 bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded" aria-label="Add Earbuds to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Smartwatch.jpg" alt="Smartwatch with fitness tracking" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Smartwatch</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹3,500</p>
+            <button onclick="addToCart('Smartwatch', 3500)" class="mt-2 bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded" aria-label="Add Smartwatch to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Tablet.jpg" alt="Tablet with stylus" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Tablet</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹12,000</p>
+            <button onclick="addToCart('Tablet', 12000)" class="mt-2 bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded" aria-label="Add Tablet to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Bluetooth Speaker.webp" alt="Bluetooth speaker" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Bluetooth Speaker</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹1,800</p>
+            <button onclick="addToCart('Bluetooth Speaker', 1800)" class="mt-2 bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded" aria-label="Add Bluetooth Speaker to cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="magic-section magic-bg-vegetables p-6">
+        <h3 class="text-2xl font-semibold mb-4 magic-header">🥬 Vegetables</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Tomato (1kg).webp" alt="Fresh red tomatoes (1kg)" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Tomato (1kg)</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹30</p>
+            <button onclick="addToCart('Tomato', 30)" class="mt-2 bg-green-600 hover:bg-green-700 text-white py-1 px-3 rounded" aria-label="Add Tomato to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Potato (1kg).webp" alt="Organic potatoes (1kg)" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Potato (1kg)</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹25</p>
+            <button onclick="addToCart('Potato', 25)" class="mt-2 bg-green-600 hover:bg-green-700 text-white py-1 px-3 rounded" aria-label="Add Potato to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Onion (1kg).webp" alt="Fresh onions (1kg)" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Onion (1kg)</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹40</p>
+            <button onclick="addToCart('Onion', 40)" class="mt-2 bg-green-600 hover:bg-green-700 text-white py-1 px-3 rounded" aria-label="Add Onion to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Carrot (1kg).webp" alt="Carrots (1kg)" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Carrot (1kg)</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹35</p>
+            <button onclick="addToCart('Carrot', 35)" class="mt-2 bg-green-600 hover:bg-green-700 text-white py-1 px-3 rounded" aria-label="Add Carrot to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Cucumber (1kg).jpg" alt="Cucumber (1kg)" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Cucumber (1kg)</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹28</p>
+            <button onclick="addToCart('Cucumber', 28)" class="mt-2 bg-green-600 hover:bg-green-700 text-white py-1 px-3 rounded" aria-label="Add Cucumber to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Spinach (1 bunch).jpg" alt="Spinach (1 bunch)" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Spinach (1 bunch)</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹20</p>
+            <button onclick="addToCart('Spinach', 20)" class="mt-2 bg-green-600 hover:bg-green-700 text-white py-1 px-3 rounded" aria-label="Add Spinach to cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="magic-section magic-bg-furniture p-6">
+        <h3 class="text-2xl font-semibold mb-4 magic-header">🪑 Furniture</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Wooden Chair.jpg" alt="Wooden chair with cushion" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Wooden Chair</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹1,200</p>
+            <button onclick="addToCart('Chair', 1200)" class="mt-2 bg-yellow-600 hover:bg-yellow-700 text-white py-1 px-3 rounded" aria-label="Add Chair to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Study Table.webp" alt="Study table with drawers" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Study Table</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹2,500</p>
+            <button onclick="addToCart('Table', 2500)" class="mt-2 bg-yellow-600 hover:bg-yellow-700 text-white py-1 px-3 rounded" aria-label="Add Table to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Sofa.jpg" alt="Comfortable sofa" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Sofa</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹8,000</p>
+            <button onclick="addToCart('Sofa', 8000)" class="mt-2 bg-yellow-600 hover:bg-yellow-700 text-white py-1 px-3 rounded" aria-label="Add Sofa to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/King Size Bed.webp" alt="King size bed" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">King Size Bed</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹15,000</p>
+            <button onclick="addToCart('King Size Bed', 15000)" class="mt-2 bg-yellow-600 hover:bg-yellow-700 text-white py-1 px-3 rounded" aria-label="Add Bed to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Bookshelf.webp" alt="Bookshelf" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Bookshelf</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹2,200</p>
+            <button onclick="addToCart('Bookshelf', 2200)" class="mt-2 bg-yellow-600 hover:bg-yellow-700 text-white py-1 px-3 rounded" aria-label="Add Bookshelf to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Wardrobe.webp" alt="Wardrobe" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Wardrobe</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹5,500</p>
+            <button onclick="addToCart('Wardrobe', 5500)" class="mt-2 bg-yellow-600 hover:bg-yellow-700 text-white py-1 px-3 rounded" aria-label="Add Wardrobe to cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="magic-section magic-bg-tshirts p-6">
+        <h3 class="text-2xl font-semibold mb-4 magic-header">👕 T-shirts</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Classic White T-shirt.jpg" alt="Classic White T-shirt" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Classic White T-shirt</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹400</p>
+            <button onclick="addToCart('Classic White T-shirt', 400)" class="mt-2 bg-pink-500 hover:bg-pink-600 text-white py-1 px-3 rounded" aria-label="Add White T-shirt to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Black Graphic Tee.jpg" alt="Black Graphic Tee" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Black Graphic Tee</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹450</p>
+            <button onclick="addToCart('Black Graphic Tee', 450)" class="mt-2 bg-pink-500 hover:bg-pink-600 text-white py-1 px-3 rounded" aria-label="Add Black Tee to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Blue Polo T-shirt.jpg" alt="Blue Polo T-shirt" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Blue Polo T-shirt</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹500</p>
+            <button onclick="addToCart('Blue Polo T-shirt', 500)" class="mt-2 bg-pink-500 hover:bg-pink-600 text-white py-1 px-3 rounded" aria-label="Add Blue Polo to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Red Sports T-shirt.webp" alt="Red Sports T-shirt" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Red Sports T-shirt</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹550</p>
+            <button onclick="addToCart('Red Sports T-shirt', 550)" class="mt-2 bg-pink-500 hover:bg-pink-600 text-white py-1 px-3 rounded" aria-label="Add Red Sports T-shirt to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Green V-neck T-shirt.jpg" alt="Green V-neck T-shirt" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Green V-neck T-shirt</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹420</p>
+            <button onclick="addToCart('Green V-neck T-shirt', 420)" class="mt-2 bg-pink-500 hover:bg-pink-600 text-white py-1 px-3 rounded" aria-label="Add Green V-neck to cart">Add to Cart</button>
+          </div>
+          <div class="card bg-white dark:bg-gray-800 shadow rounded p-4">
+            <img src="products/Yellow Printed T-shirt.webp" alt="Yellow Printed T-shirt" loading="lazy" class="rounded mb-2 h-40 w-full object-cover">
+            <h4 class="text-lg font-bold">Yellow Printed T-shirt</h4>
+            <p class="text-gray-500 dark:text-gray-300">₹480</p>
+            <button onclick="addToCart('Yellow Printed T-shirt', 480)" class="mt-2 bg-pink-500 hover:bg-pink-600 text-white py-1 px-3 rounded" aria-label="Add Yellow Printed T-shirt to cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="cart" class="mt-12 bg-white/80 dark:bg-gray-800/80 p-6 rounded shadow glass">
+      <h3 class="text-2xl font-semibold mb-4 magic-header">🛒 Your Cart</h3>
+      <ul id="cart-items" class="space-y-2"></ul>
+      <p id="cart-total" class="mt-4 font-bold text-lg">Total: ₹0</p>
+      <button class="mt-4 bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded" onclick="clearCart()" aria-label="Clear Cart">Clear Cart</button>
+    </section>
+  </main>
+  <footer class="bg-gray-800 text-white text-center py-4 mt-8">
+    &copy; 2025 Shreyash Patil. Happy Shopping!
+  </footer>
+  <!-- Social Media Buttons (fixed, not in preview) -->
+  <div class="fixed top-1/2 right-4 z-50 flex flex-col gap-3">
+    <a href="https://github.com/Trimaxsteel" target="_blank" rel="noopener" aria-label="GitHub" class="bg-gray-900 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition">
+      <i class="fab fa-github fa-lg"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/shreyash-patil-722887321" target="_blank" rel="noopener" aria-label="LinkedIn" class="bg-blue-700 hover:bg-blue-800 text-white p-3 rounded-full shadow-lg transition">
+      <i class="fab fa-linkedin fa-lg"></i>
+    </a>
+    <a href="https://wa.me/918600206100" target="_blank" rel="noopener" aria-label="WhatsApp" class="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition">
+      <i class="fab fa-whatsapp fa-lg"></i>
+    </a>
+    <a href="https://www.youtube.com/@trimaxsteel8907" target="_blank" rel="noopener" aria-label="YouTube" class="bg-red-600 hover:bg-red-700 text-white p-3 rounded-full shadow-lg transition">
+      <i class="fab fa-youtube fa-lg"></i>
+    </a>
+  </div>
+  <!-- Checkout Modal -->
+  <div id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-xl p-8 w-full max-w-lg">
+      <h2 id="checkout-title" class="text-2xl font-bold mb-4 text-center">Checkout</h2>
+      <form id="checkout-form" class="space-y-4">
+        <div>
+          <label class="block font-semibold mb-1">Full Name</label>
+          <input type="text" name="name" required class="w-full p-2 rounded border border-gray-300 dark:bg-gray-800 dark:text-white" />
+        </div>
+        <div>
+          <label class="block font-semibold mb-1">Delivery Address</label>
+          <textarea name="address" required class="w-full p-2 rounded border border-gray-300 dark:bg-gray-800 dark:text-white"></textarea>
+        </div>
+        <div>
+          <label class="block font-semibold mb-1">Phone Number</label>
+          <input type="tel" name="phone" required pattern="[0-9]{10}" class="w-full p-2 rounded border border-gray-300 dark:bg-gray-800 dark:text-white" />
+        </div>
+        <div>
+          <label class="block font-semibold mb-1">Email Address</label>
+          <input type="email" name="email" required class="w-full p-2 rounded border border-gray-300 dark:bg-gray-800 dark:text-white" />
+        </div>
+        <div>
+          <label class="block font-semibold mb-1">Payment Method</label>
+          <select name="payment" required class="w-full p-2 rounded border border-gray-300 dark:bg-gray-800 dark:text-white">
+            <option value="">Select</option>
+            <option value="upi">UPI</option>
+            <option value="card">Credit/Debit Card</option>
+            <option value="cod">Cash on Delivery</option>
+          </select>
+        </div>
+        <div id="payment-details" class="hidden">
+          <!-- Dynamic payment fields will be inserted here -->
+        </div>
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded font-bold">Place Order</button>
+        <button type="button" id="close-checkout" class="w-full mt-2 bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-white py-2 rounded">Cancel</button>
+      </form>
+    </div>
+  </div>
+  <!-- Order Confirmation Modal -->
+  <div id="order-confirmation" role="dialog" aria-modal="true" aria-labelledby="order-confirm-title" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-xl p-8 w-full max-w-md text-center">
+      <h2 id="order-confirm-title" class="text-2xl font-bold mb-4">Thank You for Your Order!</h2>
+      <p class="mb-4">Your order has been placed successfully. We will deliver your items soon.</p>
+      <button id="close-confirmation" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded font-bold">Close</button>
+    </div>
+  </div>
+  <script>
+// Minimal cart logic to make addToCart and clearCart work
+let cart = [];
+function addToCart(name, price) {
+  cart.push({ name, price });
+  updateCartUI();
+  showCartNotification(name);
+}
+function clearCart() {
+  cart = [];
+  updateCartUI();
+}
+function updateCartUI() {
+  const cartItems = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  cartItems.innerHTML = cart.map(item => `<li>${item.name} - ₹${item.price}</li>`).join('');
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  cartTotal.textContent = `Total: ₹${total}`;
+}
+
+// Checkout and order confirmation logic
+document.getElementById('checkout-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  // Here you would typically handle the payment and order processing
+  // For this demo, we'll just show the confirmation modal
+  document.getElementById('checkout-modal').classList.add('hidden');
+  document.getElementById('order-confirmation').classList.remove('hidden');
+});
+
+document.getElementById('close-checkout').addEventListener('click', function() {
+  document.getElementById('checkout-modal').classList.add('hidden');
+});
+
+document.getElementById('close-confirmation').addEventListener('click', function() {
+  document.getElementById('order-confirmation').classList.add('hidden');
+});
+  </script>
+  <script src="shop.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+(function(){
+  emailjs.init('JcfPVCectAoV4PHMS'); // <-- Your real EmailJS Public Key
+})();
+
+// --- Accessibility & UX Improvements ---
+// Cart notification with aria-live
+function showCartNotification(name) {
+  const notification = document.createElement('div');
+  notification.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg animate-bounce';
+  notification.textContent = `Added ${name} to cart!`;
+  notification.setAttribute('role', 'status');
+  notification.setAttribute('aria-live', 'polite');
+  document.body.appendChild(notification);
+  setTimeout(() => notification.remove(), 2000);
+}
+
+// Keyboard accessibility for modals (focus trap, ESC to close)
+function trapFocus(modal) {
+  const focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+  if (!focusable.length) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  modal.addEventListener('keydown', function(e) {
+    if (e.key === 'Tab') {
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
+    if (e.key === 'Escape') {
+      modal.classList.add('hidden');
+    }
+  });
+}
+
+// Show checkout modal with focus trap
+const checkoutModal = document.getElementById('checkout-modal');
+const orderConfirmation = document.getElementById('order-confirmation');
+const checkoutForm = document.getElementById('checkout-form');
+const closeCheckout = document.getElementById('close-checkout');
+const closeConfirmation = document.getElementById('close-confirmation');
+
+// Add Checkout button to cart section if not present
+if (!document.getElementById('cart-checkout-btn')) {
+  const btn = document.createElement('button');
+  btn.id = 'cart-checkout-btn';
+  btn.textContent = 'Checkout';
+  btn.className = 'mt-4 ml-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded font-bold';
+  btn.setAttribute('aria-label', 'Proceed to checkout');
+  btn.onclick = () => {
+    checkoutModal.classList.remove('hidden');
+    setTimeout(() => {
+      const firstInput = checkoutModal.querySelector('input, select, textarea, button');
+      if (firstInput) firstInput.focus();
+    }, 100);
+    trapFocus(checkoutModal);
+  };
+  document.querySelector('#cart').appendChild(btn);
+}
+
+if (closeCheckout) closeCheckout.onclick = () => checkoutModal.classList.add('hidden');
+if (closeConfirmation) closeConfirmation.onclick = () => orderConfirmation.classList.add('hidden');
+
+if (orderConfirmation) {
+  orderConfirmation.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') orderConfirmation.classList.add('hidden');
+  });
+}
+
+// Payment method dynamic fields
+if (checkoutForm) {
+  checkoutForm.payment.addEventListener('change', function() {
+    const details = document.getElementById('payment-details');
+    details.innerHTML = '';
+    details.classList.add('hidden');
+    if (this.value === 'upi') {
+      details.innerHTML = '<label class="block font-semibold mb-1">UPI ID</label><input type="text" name="upiid" required class="w-full p-2 rounded border border-gray-300 dark:bg-gray-800 dark:text-white" placeholder="your@upi" />';
+      details.classList.remove('hidden');
+    } else if (this.value === 'card') {
+      details.innerHTML = '<label class="block font-semibold mb-1">Card Number</label><input type="text" name="cardnum" required class="w-full p-2 rounded border border-gray-300 dark:bg-gray-800 dark:text-white" placeholder="1234 5678 9012 3456" maxlength="19" />' +
+        '<label class="block font-semibold mb-1 mt-2">Expiry</label><input type="text" name="expiry" required class="w-full p-2 rounded border border-gray-300 dark:bg-gray-800 dark:text-white" placeholder="MM/YY" maxlength="5" />' +
+        '<label class="block font-semibold mb-1 mt-2">CVV</label><input type="password" name="cvv" required class="w-full p-2 rounded border border-gray-300 dark:bg-gray-800 dark:text-white" maxlength="4" />';
+      details.classList.remove('hidden');
+    }
+  });
+}
+
+// Enhanced checkout form validation
+if (checkoutForm) {
+  checkoutForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Validate phone
+    const phone = checkoutForm.phone.value;
+    if (!/^\d{10}$/.test(phone)) {
+      alert('Please enter a valid 10-digit phone number.');
+      checkoutForm.phone.focus();
+      return;
+    }
+    // Validate email
+    const email = checkoutForm.email.value;
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
+      alert('Please enter a valid email address.');
+      checkoutForm.email.focus();
+      return;
+    }
+    // Validate payment details if required
+    if (checkoutForm.payment.value === 'upi') {
+      if (!checkoutForm.upiid.value || !checkoutForm.upiid.value.includes('@')) {
+        alert('Please enter a valid UPI ID.');
+        checkoutForm.upiid.focus();
+        return;
+      }
+    }
+    if (checkoutForm.payment.value === 'card') {
+      if (!/^\d{16,19}$/.test(checkoutForm.cardnum.value.replace(/\s/g, ''))) {
+        alert('Please enter a valid card number.');
+        checkoutForm.cardnum.focus();
+        return;
+      }
+      if (!/^\d{2}\/\d{2}$/.test(checkoutForm.expiry.value)) {
+        alert('Please enter expiry in MM/YY format.');
+        checkoutForm.expiry.focus();
+        return;
+      }
+      if (!/^\d{3,4}$/.test(checkoutForm.cvv.value)) {
+        alert('Please enter a valid CVV.');
+        checkoutForm.cvv.focus();
+        return;
+      }
+    }
+    // Prepare order details
+    const order = {
+      name: checkoutForm.name.value,
+      email: checkoutForm.email.value,
+      address: checkoutForm.address.value,
+      phone: checkoutForm.phone.value,
+      payment: checkoutForm.payment.value,
+      upiid: checkoutForm.upiid ? checkoutForm.upiid.value : '',
+      cardnum: checkoutForm.cardnum ? checkoutForm.cardnum.value : '',
+      expiry: checkoutForm.expiry ? checkoutForm.expiry.value : '',
+      cvv: checkoutForm.cvv ? checkoutForm.cvv.value : '',
+      cart: cart.map(item => `${item.name} (₹${item.price})`).join(', '),
+      total: document.getElementById('cart-total').textContent
+    };
+    // Send email to user
+    emailjs.send('trimaxsteel01', 'template_3669', {
+      to_email: order.email,
+      admin_email: '123shreyash2056@sjcem.edu.in',
+      from_name: order.name,
+      address: order.address,
+      phone: order.phone,
+      payment: order.payment,
+      upiid: order.upiid,
+      cardnum: order.cardnum,
+      expiry: order.expiry,
+      cart: order.cart,
+      total: order.total
+    }).then(function() {
+      // After user email, send to admin
+      emailjs.send('trimaxsteel01', 'template_3669', {
+        to_email: '123shreyash2056@sjcem.edu.in',
+        admin_email: '123shreyash2056@sjcem.edu.in',
+        from_name: order.name,
+        address: order.address,
+        phone: order.phone,
+        payment: order.payment,
+        upiid: order.upiid,
+        cardnum: order.cardnum,
+        expiry: order.expiry,
+        cart: order.cart,
+        total: order.total
+      }).then(function() {
+        checkoutModal.classList.add('hidden');
+        orderConfirmation.classList.remove('hidden');
+        cart = [];
+        updateCartUI();
+        setTimeout(() => {
+          const closeBtn = document.getElementById('close-confirmation');
+          if (closeBtn) closeBtn.focus();
+        }, 100);
+      }, function(error) {
+        alert('Order placed, but failed to send admin email: ' + error.text);
+        checkoutModal.classList.add('hidden');
+        orderConfirmation.classList.remove('hidden');
+        cart = [];
+        updateCartUI();
+      });
+    }, function(error) {
+      alert('Order placed, but failed to send confirmation email: ' + error.text);
+      checkoutModal.classList.add('hidden');
+      orderConfirmation.classList.remove('hidden');
+      cart = [];
+      updateCartUI();
+    });
+  });
+}
+  </script>
+  <script>
+  // Hamburger menu toggle
+  document.getElementById('menu-toggle').onclick = function() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  };
+  // Dark mode toggle
+  document.getElementById('darkToggle').onclick = function() {
+    document.body.classList.toggle('dark');
+    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+  };
+  // On load, set theme from localStorage
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark');
+  }
+  </script>
+</body>
+</html>

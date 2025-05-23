@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreyash Patil - Portfolio</title>
+  <meta name="description" content="Shreyash Patil - Portfolio, Education, Goals, Achievements" />
+  <meta name="author" content="Shreyash Patil" />
+  <meta property="og:title" content="Shreyash Patil Portfolio" />
+  <meta property="og:image" content="sp.png" />
+  <meta property="og:description" content="Personal introduction portfolio site." />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <!-- Loading Spinner -->
+  <div id="spinner" class="fixed inset-0 bg-white dark:bg-gray-900 flex flex-col items-center justify-center z-50">
+    <div class="relative w-24 h-24 mb-6">
+      <div class="absolute inset-0 rounded-full border-4 border-blue-500 border-t-transparent animate-spin"></div>
+      <img src="images/sp.png" alt="Preview of Shreyash Patil" class="w-full h-full rounded-full object-cover" />
+    </div>
+    <p class="text-lg font-medium">Loading...</p>
+  </div>
+
+  <!-- Header with Hamburger Menu -->
+  <header class="fixed w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <span class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Shreyash Patil</span>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
+          <a href="#achievements" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Achievements</a>
+          <a href="#goals" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Goals</a>
+          <a href="#hobbies" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Hobbies</a>
+          <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
+          <a href="shop.html" class="px-3 py-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:shadow-lg transition-all">Shop</a>
+        </nav>
+        
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <button id="menu-toggle" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden absolute w-full bg-white dark:bg-gray-800 shadow-lg z-30">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
+        <a href="#achievements" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Achievements</a>
+        <a href="#goals" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Goals</a>
+        <a href="#hobbies" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Hobbies</a>
+        <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Contact</a>
+        <a href="shop.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gradient-to-r from-blue-500 to-purple-500">Shop</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-20 pb-12">
+    <!-- Hero Section -->
+    <section id="welcome" class="relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="relative z-10 md:flex md:items-center md:justify-between text-center md:text-left">
+          <div class="md:w-1/2 flex flex-col items-center md:items-start">
+            <div class="mx-auto md:mx-0 h-40 w-40 rounded-full border-4 border-white dark:border-gray-800 shadow-xl overflow-hidden mb-6">
+              <img src="images/profile.jpg" alt="Shreyash Patil" class="w-full h-full object-cover" />
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">Shreyash Sudhir Patil</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mb-8">Computer Science Student | Aspiring Engineer | Tech Enthusiast</p>
+            <a href="shop.html" class="inline-block px-8 py-3 text-lg font-bold rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white hover:shadow-xl hover:shadow-purple-500/30">🛒 Visit My Shop</a>
+          </div>
+          <div class="md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0">
+            <div class="max-w-2xl w-full aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-2xl">
+              <iframe class="w-full h-full" src="https://www.youtube.com/embed/W3ksXwAHRT0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-100/50 to-purple-100/50 dark:from-gray-800/50 dark:to-gray-900/50 -z-0"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+        <div class="p-8">
+          <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6 relative inline-block">
+            <span class="relative z-10">About Me</span>
+            <span class="absolute bottom-0 left-0 w-full h-2 bg-blue-100 dark:bg-blue-900/50 z-0"></span>
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <div class="flex items-start mb-4">
+                <div class="flex-shrink-0 text-blue-500 dark:text-blue-400 mr-4 mt-1">
+                  <i class="fas fa-map-marker-alt fa-lg"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Location</h3>
+                  <p class="text-gray-600 dark:text-gray-400">Mumbai, Virar, Maharashtra</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start mb-4">
+                <div class="flex-shrink-0 text-blue-500 dark:text-blue-400 mr-4 mt-1">
+                  <i class="fas fa-graduation-cap fa-lg"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Education</h3>
+                  <p class="text-gray-600 dark:text-gray-400">B.Tech in Computer Science (2nd Year)</p>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex items-start mb-4">
+                <div class="flex-shrink-0 text-blue-500 dark:text-blue-400 mr-4 mt-1">
+                  <i class="fas fa-language fa-lg"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Languages</h3>
+                  <p class="text-gray-600 dark:text-gray-400">English, Hindi, Marathi</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start mb-4">
+                <div class="flex-shrink-0 text-blue-500 dark:text-blue-400 mr-4 mt-1">
+                  <i class="fas fa-code fa-lg"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Coding</h3>
+                  <p class="text-gray-600 dark:text-gray-400">Python, C</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl shadow-xl overflow-hidden">
+        <div class="p-8">
+          <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Achievements</h2>
+          <ul id="achievements-list" class="space-y-4">
+            <li class="flex items-start">
+              <div class="flex-shrink-0 h-6 w-6 text-blue-500 dark:text-blue-400 mt-1 mr-3">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <p class="text-gray-700 dark:text-gray-300">Loading achievements...</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section id="goals" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+        <div class="p-8">
+          <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Future Goals</h2>
+          <div class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-500 dark:text-blue-400 mt-1 mr-3">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <p class="text-gray-700 dark:text-gray-300 text-lg">I'm going to become a highly skilled engineer — and have fun while doing it!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personal Section -->
+    <section id="personal" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl shadow-xl overflow-hidden">
+        <div class="p-8">
+          <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">More About Me</h2>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-6 w-6 text-blue-500 dark:text-blue-400 mt-1 mr-3">
+                <i class="fas fa-table-tennis-paddle-ball"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Hobby</h3>
+                <p class="text-gray-600 dark:text-gray-400">I love playing badminton because it gives energetic vibes.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-6 w-6 text-blue-500 dark:text-blue-400 mt-1 mr-3">
+                <i class="fas fa-user-tie"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Role Model</h3>
+                <p class="text-gray-600 dark:text-gray-400">My father — his attitude, ethics, and hard work inspire me.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-6 w-6 text-blue-500 dark:text-blue-400 mt-1 mr-3">
+                <i class="fas fa-book"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Favourite Book</h3>
+                <p class="text-gray-600 dark:text-gray-400">The Power of Your Subconscious Mind — it teaches lessons on hope.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-6 w-6 text-blue-500 dark:text-blue-400 mt-1 mr-3">
+                <i class="fas fa-globe"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Favourite Website</h3>
+                <p class="text-gray-600 dark:text-gray-400">Pokémon Showdown — I love Pokémon!</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-6 w-6 text-blue-500 dark:text-blue-400 mt-1 mr-3">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Favourite Startup</h3>
+                <p class="text-gray-600 dark:text-gray-400">Zepto — because of its fast service.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-6 w-6 text-blue-500 dark:text-blue-400 mt-1 mr-3">
+                <i class="fas fa-hands-helping"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Volunteering</h3>
+                <p class="text-gray-600 dark:text-gray-400">I've participated in NSS activities in college multiple times.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+        <div class="p-8">
+          <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Hobbies</h2>
+          <ul id="hobbies-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <li class="flex items-center bg-gray-100 dark:bg-gray-700 rounded-lg p-4">
+              <div class="flex-shrink-0 h-5 w-5 text-blue-500 dark:text-blue-400 mr-3">
+                <i class="fas fa-circle-notch"></i>
+              </div>
+              <span class="text-gray-700 dark:text-gray-300">Loading hobbies...</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl shadow-xl overflow-hidden">
+        <div class="p-8">
+          <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Testimonials</h2>
+          <div id="testimonials-list" class="space-y-6">
+            <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow">
+              <div class="flex items-center mb-4">
+                <div class="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold mr-4">
+                  ?
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800 dark:text-gray-200">Loading...</h3>
+                </div>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300 italic">Loading testimonials...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section id="quote" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl shadow-xl overflow-hidden text-white">
+        <div class="p-8 text-center">
+          <div class="mb-4">
+            <i class="fas fa-quote-left text-3xl opacity-20"></i>
+          </div>
+          <blockquote id="quote-text" class="text-xl md:text-2xl font-medium mb-4">Loading quote...</blockquote>
+          <cite id="quote-author" class="text-blue-100"></cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+        <div class="p-8">
+          <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Contact Me</h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <div class="flex items-center mb-4">
+                <div class="flex-shrink-0 text-blue-500 dark:text-blue-400 mr-4">
+                  <i class="fas fa-phone fa-lg"></i>
+                </div>
+                <div>
+                  <a href="tel:8600206100" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">8600206100</a>
+                </div>
+              </div>
+              
+              <div class="flex items-center mb-4">
+                <div class="flex-shrink-0 text-blue-500 dark:text-blue-400 mr-4">
+                  <i class="fas fa-envelope fa-lg"></i>
+                </div>
+                <div>
+                  <a href="mailto:123shreyash2056@sjcem.edu.in" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">123shreyash2056@sjcem.edu.in</a>
+                </div>
+              </div>
+              
+              <div class="flex items-center mb-4">
+                <div class="flex-shrink-0 text-blue-500 dark:text-blue-400 mr-4">
+                  <i class="fab fa-whatsapp fa-lg"></i>
+                </div>
+                <div>
+                  <a href="https://wa.me/918600206100" target="_blank" rel="noopener" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Chat on WhatsApp</a>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex items-center mb-4">
+                <div class="flex-shrink-0 text-blue-500 dark:text-blue-400 mr-4">
+                  <i class="fab fa-github fa-lg"></i>
+                </div>
+                <div>
+                  <a href="https://github.com/Trimaxsteel" target="_blank" rel="noopener" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Trimaxsteel</a>
+                </div>
+              </div>
+              
+              <div class="flex items-center mb-4">
+                <div class="flex-shrink-0 text-blue-500 dark:text-blue-400 mr-4">
+                  <i class="fab fa-linkedin fa-lg"></i>
+                </div>
+                <div>
+                  <a href="https://www.linkedin.com/in/shreyash-patil-722887321" target="_blank" rel="noopener" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Shreyash Patil</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8 rounded-xl overflow-hidden shadow-lg">
+            <iframe class="w-full h-64" style="border:0;" loading="lazy" allowfullscreen
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.973739457023!2d72.77628151534447!3d19.45591848509476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7aa49b828c6a5%3A0xbefe4c41a14ad251!2sVirar%20West%2C%20Virar%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1684557425286!5m2!1sen!2sin"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-blue-800 to-purple-800 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-lg">&copy; 2025 Shreyash Patil. Made with <i class="fas fa-heart text-red-400"></i> and purpose.</p>
+      
+      <div class="flex justify-center space-x-6 mt-6">
+        <a href="#" class="text-white hover:text-blue-200 transition-colors">
+          <i class="fab fa-twitter fa-lg"></i>
+        </a>
+        <a href="#" class="text-white hover:text-blue-200 transition-colors">
+          <i class="fab fa-instagram fa-lg"></i>
+        </a>
+        <a href="#" class="text-white hover:text-blue-200 transition-colors">
+          <i class="fab fa-linkedin fa-lg"></i>
+        </a>
+        <a href="#" class="text-white hover:text-blue-200 transition-colors">
+          <i class="fab fa-github fa-lg"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="scrollTop" class="fixed bottom-8 right-8 hidden p-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-110">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Dark Mode Toggle -->
+  <button id="darkToggle" class="fixed bottom-8 left-8 p-3 bg-gray-700 text-white rounded-full shadow-lg hover:bg-gray-800 transition-all transform hover:scale-110">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Social Media Buttons (fixed, not in preview) -->
+  <div class="fixed top-1/2 right-4 z-50 flex flex-col gap-3">
+    <a href="https://github.com/Trimaxsteel" target="_blank" rel="noopener" aria-label="GitHub" class="bg-gray-900 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition">
+      <i class="fab fa-github fa-lg"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/shreyash-patil-722887321" target="_blank" rel="noopener" aria-label="LinkedIn" class="bg-blue-700 hover:bg-blue-800 text-white p-3 rounded-full shadow-lg transition">
+      <i class="fab fa-linkedin fa-lg"></i>
+    </a>
+    <a href="https://wa.me/918600206100" target="_blank" rel="noopener" aria-label="WhatsApp" class="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition">
+      <i class="fab fa-whatsapp fa-lg"></i>
+    </a>
+    <a href="https://www.youtube.com/@trimaxsteel8907" target="_blank" rel="noopener" aria-label="YouTube" class="bg-red-600 hover:bg-red-700 text-white p-3 rounded-full shadow-lg transition">
+      <i class="fab fa-youtube fa-lg"></i>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

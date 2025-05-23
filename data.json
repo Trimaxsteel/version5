@@ -1,0 +1,41 @@
+{
+  "achievements": [
+    {
+      "title": "Completed .NET & SQL course with O grade",
+      "year": 2024
+    },
+    {
+      "title": "4th place in school Table Tennis competition",
+      "year": 2019
+    },
+    {
+      "title": "Great focus and concentration",
+      "year": null
+    }
+  ],
+  "hobbies": [
+    "Playing badminton",
+    "Reading books",
+    "Volunteering for NSS"
+  ],
+  "testimonials": [
+    {
+      "name": "Samtani Edwin",
+      "comment": "Impressive dedication and focus on learning."
+    }
+  ],
+  "quotes": [
+    {
+      "text": "The best way to get started is to quit talking and begin doing.",
+      "author": "Walt Disney"
+    },
+    {
+      "text": "Don't let yesterday take up too much of today.",
+      "author": "Will Rogers"
+    },
+    {
+      "text": "You learn more from failure than from success.",
+      "author": "Unknown"
+    }
+  ]
+}
